@@ -113,7 +113,7 @@ class AuthorDeleteContent(DestroyAPIView):
         return Content.objects.filter(author=user)
 
 # search the content
-class QuestionsAPIView(ListCreateAPIView):
+class SearchAPIView(ListCreateAPIView):
     search_fields = ['title', 'body', 'summary','categories__name', 'author__first_name', 'author__last_name']
     filter_backends = (filters.SearchFilter,)
     queryset = Content.objects.all()

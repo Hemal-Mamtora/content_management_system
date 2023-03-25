@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (RegisterUserAPIView, loginView, CreateCategory, ContentCreateView, 
                     listContent, AdminListContent, AdminRetrieveContentUpdate, updateContent, 
-                    AdminDeleteContent, AuthorDeleteContent, QuestionsAPIView)
+                    AdminDeleteContent, AuthorDeleteContent, SearchAPIView)
 urlpatterns = [
   path('register/',RegisterUserAPIView.as_view()),
   path('login/', loginView),
@@ -13,5 +13,5 @@ urlpatterns = [
   path('update-content/<int:pk>/',updateContent.as_view()),
   path('admin-delete-content/<int:pk>/',AdminDeleteContent.as_view()),
   path('delete-content/<int:pk>/',AuthorDeleteContent.as_view()),
-  path('question/',QuestionsAPIView.as_view()),
+  path('search/',SearchAPIView.as_view()),
 ]
