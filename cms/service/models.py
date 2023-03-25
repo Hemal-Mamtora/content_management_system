@@ -43,5 +43,7 @@ class Content(models.Model):
     # not required
     categories = models.ManyToManyField(Category)
 
+    author=models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+
 
 
